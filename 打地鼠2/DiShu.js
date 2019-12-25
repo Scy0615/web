@@ -191,7 +191,6 @@ function game_over(){
 
     //地鼠清场
     qingchang();
-    // isOneStart = false;
 
 }
 
