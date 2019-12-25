@@ -1,0 +1,153 @@
+/*
+* @Author: GYT
+* @Date:   2019-12-23 16:32:02
+* @Last Modified by:   GYT
+* @Last Modified time: 2019-12-23 16:34:55
+*/
+*{
+	padding: 0;
+	margin: 0;
+}
+.center{
+	height: 1150px;
+	width: 1030px;
+	margin: 0 auto;
+	border: 1px solid yellow;
+	background-image:url("img/ground.png");
+}
+#main{
+	border:2px solid black;
+	position:relative;
+	width: 620px;
+	height: 765px;
+	margin-top: 115px;
+	margin-left: 204px;
+	overflow: hidden;
+	
+}
+#main_roll{
+	height: 1530px;
+	width: 620px;
+/* 	border:1px solid blue; */
+	position: absolute;
+	top: -0px;
+/* 	top: -765px; */
+}
+#main_roll>div{
+/* 	border:1px solid blue; */
+	height: 765px;
+	width: 620px;
+	overflow: hidden;
+	float: left;
+}
+#gamePanel{
+/* 	background: red; */
+	border:1px solid #9faa8c;
+	position: relative;
+	height: 700px;
+	width: 360px;
+	top: 20px;
+	left: 20px;
+	overflow: hidden;
+	
+}
+#gamePanel_roll{
+	width: 360px;
+	height: 1400px;
+	position: absolute;
+	top: -700px;
+}
+#gamePanel_roll>div{
+	width: 360px;
+	height: 700px;
+	float: left;
+}
+#game_div{
+	margin-left: 20px;
+	margin-top: 50px;
+}
+#settingPanel{
+	background:#9faa8c;
+	font-size: 50px;
+/* 	padding-left: 20px; */
+}
+#settingPanel>input{
+	background: none;
+	margin-top:20px;
+/* 	width: 50px; */
+	height: 50px;
+	padding-top: 9px;
+	font-size: 50px;
+}
+#gameData{
+	position: relative;
+/* 	border:1px solid red; */
+	height: 700px;
+	width: 200px;
+	left: 400px;
+	top: -682px;
+	overflow: hidden;
+}
+#gameData>div{
+	float: left;
+	width: 150px;
+	height: 80px;
+/* 	border: 1px solid red; */
+	margin-top: 50px;
+	margin-left: 20px;
+	font-size: 50px;
+}
+#gamePanel:hover{
+/* 	cursor: url("D:/Work/Sublime Text 3/html/打地鼠2/img/GB3.ico"); */
+	cursor:url("img/cross_i.cur"),crosshair;
+/* 	border: 1px solid blue; */
+	
+/* 	cursor:crosshair */
+	
+}
+
+#button{
+	position: relative;
+	width: 900px;
+	height: 150px;
+	border: 1px solid #eec837;
+	left: 60px;
+	top: 88px;
+}
+#button>div{
+	float: left;
+/* 	border: 1px solid blue; */
+	width: 100px;
+	height: 90px;
+	overflow: hidden;
+	margin-top: 23px;
+}
+#button>div>img{
+	opacity: 1;
+}
+#button>div>img:hover{
+	opacity: 0;
+	cursor: pointer;
+}
+#ksBtn{
+	margin-left: 55px;
+}
+#ztBtn{
+	margin-left: 49px
+}
+#tzBtn{
+	margin-left: 48px;
+}
+#setting{
+	margin-left: 342px;
+}
+
+
+
+
+
+
+
+
+
+
