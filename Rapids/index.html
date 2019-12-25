@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>自编激流勇进</title>
+		<style>
+			*{
+				padding:0px;
+				margin:0px;
+			}
+			#box{
+				width:800px;
+				height:594px;
+				overflow:hidden;
+				background:url(image/bg.png) no-repeat;
+			}
+			#upper_left{
+				width:800px;
+				height:200px;
+			}
+			#d1{
+				width:292px;
+				height:57px;
+				position:relative;
+				float:left;
+				left:60px;
+				top:110px;
+				border:1px solid red;
+			}
+			#d1>div{
+				width:71px;
+				height:55px;
+				float:left;
+				margin:1px;
+				background:url(image/frog.png) no-repeat center;
+				display:none;
+			}
+			#in1{
+				width:105px;
+				height:18px;
+				position:relative;
+				float:left;
+				top:121px;
+				left:67px;
+			}
+			#low_left{
+				width:800px;
+				height:151px;
+			}
+			#box_1{
+				width:1600px;
+				height:81px;
+				position:relative;
+				left:-200px;
+			}
+			#box_1>div{
+				width:200px;
+				height:61px;
+				float:left;
+				position:relative;
+				top:10px;
+				margin-right:0px;
+				background:url(image/leaf.png) no-repeat center;
+			}
+			#b1{
+				width:70px;
+				height:51px;
+				position:relative;
+				top:-20px;
+				left:65px;
+				background:url(image/frog_back.png) no-repeat center;
+				display:none;
+			}
+			#b2{
+				width:70px;
+				height:51px;
+				position:relative;
+				top:-20px;
+				left:65px;
+				background:url(image/frog_back.png) no-repeat center;
+				display:none;
+			}
+			#b3{
+				width:70px;
+				height:51px;
+				position:relative;
+				top:-20px;
+				left:65px;
+				background:url(image/frog_back.png) no-repeat center;
+				display:none;
+			}
+			#box_2{
+				width:1600px;
+				height:81px;
+				position:relative;
+				left:-200px;
+			}
+			#box_2>div{
+				width:200px;
+				height:61px;
+				float:left;
+				position:relative;
+				top:10px;
+				margin-right:0px;
+				background:url(image/leaf.png) no-repeat center;
+			}
+			#box_3{
+				width:1600px;
+				height:81px;
+				position:relative;
+				left:-200px;
+			}
+			#box_3>div{
+				width:200px;
+				height:61px;
+				float:left;
+				position:relative;
+				top:10px;
+				margin-right:0px;
+				background:url(image/leaf.png) no-repeat center;
+			}
+			#d19{
+				width:129px;
+				height:128px;
+				position:relative;
+				float:left;
+				left:10px;
+				background:url(image/begin.png) no-repeat center;
+			}
+			#d20{
+				width:85px;
+				height:85px;
+				position:relative;
+				float:left;
+				background:url(image/pause.png) no-repeat center;
+			}
+			#d21{
+				width:292px;
+				height:57px;
+				position:relative;
+				float:left;
+				top:40px;
+				left:165px;
+			}
+			#d21>div{
+				width:71px;
+				height:55px;
+				float:left;
+				margin:1px;
+				background:url(image/frog.png) no-repeat center;
+			}
+			input{
+				width:105px;
+				height:18px;
+				position:relative;
+				top:20px;
+				left:45px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="upper_left" id="upper_left">
+				<div id="d1">
+					<div id="g1"></div>
+					<div id="g2"></div>
+					<div id="g3"></div>
+					<div id="g4"></div>
+				</div>
+				<input type="text" value="" id="in1"/>
+			</div>
+			<div class="box_1" id="box_1">
+				<div id="i1">
+					<input type="text" value="4" name="1"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i2">
+					<input type="text" value="1" name="2"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i3">
+					<input type="text" value="2" name="3"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i4">
+					<input type="text" value="3" name="4"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i5">
+					<input type="text" value="4" name="5"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i6">
+					<input type="text" value="1" name="6"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i7">
+					<input type="text" value="2" name="7"/>
+					<div id="b1"></div>
+				</div>
+				<div id="i8">
+					<input type="text" value="3" name="8"/>
+					<div id="b1"></div>
+				</div>
+			</div>
+			<div class="box_2" id="box_2">
+				<div id="i9">
+					<input type="text" value="4" name="9"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i10">
+					<input type="text" value="1" name="10"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i11">
+					<input type="text" value="2" name="11"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i12">
+					<input type="text" value="3" name="12"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i13">
+					<input type="text" value="4" name="13"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i14">
+					<input type="text" value="1" name="14"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i15">
+					<input type="text" value="2" name="15"/>
+					<div id="b2"></div>
+				</div>
+				<div id="i16">
+					<input type="text" value="3" name="16"/>
+					<div id="b2"></div>
+				</div>
+			</div>
+			<div class="box_3" id="box_3">
+				<div id="i17">
+					<input type="text" value="4" name="17"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i18">
+					<input type="text" value="1" name="18"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i19">
+					<input type="text" value="2" name="19"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i20">
+					<input type="text" value="3" name="20"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i21">
+					<input type="text" value="4" name="21"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i22">
+					<input type="text" value="1" name="22"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i23">
+					<input type="text" value="2" name="23"/>
+					<div id="b3"></div>
+				</div>
+				<div id="i24">
+					<input type="text" value="3" name="24"/>
+					<div id="b3"></div>
+				</div>
+			</div>
+			<div class="low_left" id="low_left">
+				<div>
+					<div id="d19"></div>
+					<div id="d20"></div>
+				</div>
+				<div id="d21">
+					<div id="g5"></div>
+					<div id="g6"></div>
+					<div id="g7"></div>
+					<div id="g8"></div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+		window.onload =function(){
+			var box_1 = document.getElementById("box_1");
+			var box_2 = document.getElementById("box_2"); 
+			var box_3 = document.getElementById("box_3");
+			var begin = document.getElementById("d19");
+			var pause = document.getElementById("d20");
+			var d21 = document.getElementById("d21");
+			var d1 = document.getElementById("d1");
+			var timer_1;
+			var timer_2;
+			var timer_3;
+			var total;
+			var k=0;
+			var which = new Array(3);
+			var userin;
+			
+			function getStyle(obj, attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				} else {
+					return getComputedStyle(obj, null)[attr];
+				}
+			}
+
+			function run_1(which){
+				timer_1 = setInterval(function(){
+					var nowposition = parseInt(getStyle(which,'left'));
+					var speed = 2;
+					var cur = nowposition + speed;
+					if(cur === 0){
+						which.style.left = '-800px'
+					}else{
+						which.style.left = cur + 'px';
+					}
+				},100)
+			}
+			function run_2(which){
+				timer_2 = setInterval(function(){
+					var nowposition = parseInt(getStyle(which,'left'));
+					var speed = -2;
+					var cur = nowposition + speed;
+					if(cur === (-800)){
+						which.style.left = '0px'
+					}else{
+						which.style.left = cur + 'px';
+					}
+				},100)
+			}
+			function run_3(which){
+				timer_3 = setInterval(function(){
+					var nowposition = parseInt(getStyle(which,'left'));
+					var speed = 2;
+					var cur = nowposition + speed;
+					if(cur === 0){
+						which.style.left = '-800px'
+					}else{
+						which.style.left = cur + 'px';
+					}
+				},100)
+			}
+			begin.onclick = function(){
+				run_1(box_1);
+				run_2(box_2);
+				run_3(box_3);
+			}
+			pause.onclick = function(){
+				clearInterval(timer_1);
+				clearInterval(timer_2);
+				clearInterval(timer_3);
+			}
+			
+			for(i=17;i<25;i++){
+				var t = document.getElementById('i'+i);
+				t.onclick= function(){
+					clearInterval(timer_3);
+					which[0] = parseInt(this.children[0].name);
+					total = 1;
+					this.children[0].style.display = "none";
+					userin = window.prompt("请在输入框中输入单词！","");
+					if(userin===(this.children[0].value)){
+						this.children[1].style.display = "block";
+						d21.children[k].style.display = "none";
+					}
+				}
+			}
+			for(i=9;i<17;i++){
+				var t = document.getElementById('i'+i);
+				t.onclick= function(){
+					var w = document.getElementById('i'+which[0]);
+					which[1]=parseInt(this.children[0].name);
+					clearInterval(timer_2);
+					total = 2;
+					this.children[0].style.display = "none";
+					userin = window.prompt("请在输入框中输入单词！","");
+					if(userin===(this.children[0].value)){
+						this.children[1].style.display = "block";
+						w.children[1].style.display = "none";
+					}
+				}
+			}
+			for(i=1;i<9;i++){
+				var t = document.getElementById('i'+i);
+				t.onclick= function(){
+					var w = document.getElementById('i'+which[1]);
+					which[2]=parseInt(this.children[0].name);
+					clearInterval(timer_1);
+					total = 3;
+					this.children[0].style.display = "none";
+					userin = window.prompt("请在输入框中输入单词！","");
+					if(userin===(this.children[0].value)){
+						this.children[1].style.display = "block";
+						w.children[1].style.display = "none";
+						eq();
+					}
+				}
+
+			}
+			function eq(){
+				if(total===3){
+					setTimeout(function(){
+						var w = document.getElementById('i'+which[2]);
+						w.children[1].style.display = "none";
+						d1.children[k].style.display="block";
+						run_1(box_1);
+						run_2(box_2);
+						run_3(box_3);
+						k++;
+						if(k===4){
+							setTimeout(alert("恭喜通关！"),2000);
+							k=0;
+						}
+					},1000);
+				}
+			}
+		}
+		</script>
+	</body>
+</html>
