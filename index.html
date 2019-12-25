@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="animate.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.login{
+			background-color: white;
+			z-index: 9999;
+			width: 300px;
+			height: 400px;
+			padding: 0 20px;
+			border: 2px solid #1688ea;
+			margin: 50px auto;
+		}
+		.tit{
+			margin-top: 5px;
+			margin-bottom: 30px;
+		}
+		.brand{
+			color: #1688ea;
+			font-size: 18px;
+			margin-right: 20px;
+		}
+		.inp{
+			width: 100%;
+			height: 40px;
+			text-indent: 8px;
+		}
+		.notice{
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+		}
+
+		.code{
+			width: 60%;
+		}
+		.getCode{
+			width: 35%;
+			height: 44px;
+			float: right;
+			border: none;
+			background-color: #eee;
+		}
+		.codeImg{
+			height: 40px;
+		}
+		.btn{
+			background: #1688ea;
+			width: 100%;
+			height: 40px;
+			border: none;
+			margin-top: 8px;
+			color: #fff;
+			border-radius: 3px;
+		}
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="login" id="login">
+			<p class="tit">			
+				<span>用户登录</span>
+				<span class="brand" onclick = "lginx();">x</span>
+			</p>
+
+			<input class="inp" type="text" placeholder="用户名">
+			<p class="notice"></p>
+
+			<input class="inp" type="password" placeholder="密码">
+			<p class="notice"></p>
+
+			<div>
+				<input class="inp code" type="text" placeholder="验证码">
+				<button class="getCode">获取验证码</button>
+			</div>
+			<div class="codeImg">
+				<!-- 点击‘获取验证码’按钮后，在此处添加 验证码图片的img标签 -->
+			</div>
+			<p class="notice"></p>
+
+			<input type="checkbox" checked>下次自动登录
+			<button class="btn">登录</button>
+		</div>
+		<div class="scroll">
+<!-- 			<img src="imgs/a15.png" id="lb"> -->
+			<div class="box1" id="box1">
+				<div id="sld">
+				<span><a href = "#" onclick="lgin1();" id="denglu">登录</a></span>
+		   		</div>
+		    </div>
+		</div>
+		<div class="box" id="box">
+			<div class="slider" id="slider">
+				<div class="slide"><a href="#"><img src="imgs/b5.jpg"></a></div>
+				<div class="slide"><a href="daqiqiu.html"><img src="imgs/b1.jpg"></a></div>
+				<div class="slide"><a href="激流勇进/Work_8.html"><img src="imgs/b2.jpg"></a></div>
+				<div class="slide"><a href="tanchishe/tcc.html" target="_blank"><img src="imgs/b3.jpg"></a></div>
+				<div class="slide"><a href="打地鼠2/打地鼠.html"><img src="imgs/b4.jpg"></a></div>
+				<div class="slide"><a href="#"><img src="imgs/b5.jpg"></a></div>
+				<div class="slide"><a href="daqiqiu.html"><img src="imgs/b1.jpg"></a></div>
+			</div>
+			<span id="left"><</span>
+			<span id="right">></span>
+			<ul class="nav" id="nav">
+				<li class="act" id="fst">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		
+	</div>
+</body>
+<script>
+	var box = document.getElementById('box');
+	var navList = document.getElementById('nav').children;
+	var slider = document.getElementById('slider');
+	var left = document.getElementById('left');
+	var right = document.getElementById('right');
+	var index = 1;
+	var isMoving = false;
+	var j = 1;
+	var sld = document.getElementById('sld');
+	var login = document.getElementById('login');
+	var denglu = document.getElementById('denglu');
+	var x = document.getElementsByClassName('inp');
+	var x1 = document.getElementsByClassName('notice');
+	var bt = document.getElementsByClassName('getCode');
+	var im = document.getElementsByClassName('codeImg');
+	var pic = document.createElement("img");
+	var images = ['zAZfB','ZEhUN','zFC9H','zhWY9','Zin4c','ZITGj','zJ6iV','zjsKP','ZKc9S','zKDXU'];
+	var lgin = document.getElementsByClassName('btn');
+	var yzmnow;
+	x[0].onfocus = function(){
+		x1[0].innerHTML = "请输入4-10位用户名";
+	};
+	x[0].onblur = function(){
+		x1[0].innerHTML = "";
+	};
+	x[1].onfocus = function(){
+		x1[1].innerHTML = "请输入6-12位密码";
+	};
+	x[1].onblur = function(){
+		x1[1].innerHTML = "";
+	};
+	bt[0].onclick = function(){
+	var rand = parseInt(Math.random()*10);
+	pic.src = "image/" + images[rand] + ".jpg";
+	pic.width = 150;
+	pic.height = 30;
+	im[0].appendChild(pic);
+	yzmnow = images[rand];
+	}
+	lgin[0].onclick = function(){
+		if(x[0].value.length > 10 || x[0].value.length < 4){
+			x1[0].innerHTML = "用户名位数不对";
+		}
+		if(x[1].value.length > 12 || x[1].value.length < 6){
+			x1[1].innerHTML = "密码位数不对";
+		}
+		if(x[2].value != yzmnow){
+			x1[2].innerHTML = "验证码错误";
+		}
+		if(x[0].value.length <= 10 && x[0].value.length >= 4 && x[1].value.length <= 12 && x[1].value.length >= 6 && x[2].value == yzmnow){
+			alert("登陆成功");
+			login.style.display = 'none';
+			denglu.innerHTML = '您好，' + x[0].value;
+		}
+	}
+
+	function lgin1() {
+		login.style.display = 'block';
+	}
+
+	function lginx() {
+		login.style.display = 'none';
+	}
+
+	function next() {
+		index++;
+		nChange();
+		animate(slider,{left: -1200 * index},function(){
+			if(index == 6 || index > 6){
+				slider.style.left = "-1200px";
+				index = 1;
+			}
+		});
+	}
+
+	function prev() {
+		index--;
+		nChange();
+		animate(slider,{left: -1200 * index},function(){
+			if(index == 0 || index < 0){
+				slider.style.left = "-6000px";
+				index = 5;
+			}
+		});
+	}
+
+	var timer = setInterval(next,3000);
+
+	box.onmouseover = function(){
+		animate(left,{opacity: 50});
+		animate(right,{opacity: 50});
+		clearInterval(timer);
+	}
+
+	box.onmouseout = function(){
+		animate(left,{opacity: 0});
+		animate(right,{opacity: 0});
+		timer = setInterval(next,3000);
+	}
+
+	right.onclick = next;
+	left.onclick = prev;
+
+	for(var i = 0; i < navList.length; i++){
+		navList[i].idx = i;
+		navList[i].onclick = function(){
+			index = this.idx + 1;
+			nChange();
+			animate(slider,{left:-1200*index})
+		}
+	}
+
+	function nChange(){
+		for (var i = 0; i < navList.length; i++) {
+			navList[i].className = '';
+		}
+		if (index == 6) {
+			navList[0].className = 'act';
+		} else if(index == 0){
+			navList[4].className = 'act';
+		} else{
+			navList[index - 1].className = 'act';
+		}
+	}
+
+</script>
+</html>

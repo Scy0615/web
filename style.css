@@ -1,0 +1,132 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.main{
+	width: 100% auto;
+	height: 750px;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+/*	margin-left: 60px;
+*/	background: url('imgs/Bckg.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 269px;
+    background-position: 50% 0px;
+    background-repeat: no-repeat no-repeat;
+}
+.box{
+	width: 1200px;
+	height: 397px;
+	margin: 100px auto;
+	position: relative;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.slider{
+	width: 8400px;
+	position: absolute;
+	left: -1200px;
+}
+.slide{
+	width: 1200px;
+	overflow: hidden;
+	float: left;
+}
+.box>span{
+	display: block;
+	width: 30px;
+	height: 50px;
+	color: white;
+	background: rgb(255,0,0);
+	top: 175px;
+	line-height: 50px;
+	font-size: 30px;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+}
+#left{
+	left: 30px;
+}
+#right{
+	right: 30px;
+}
+ul{
+	list-style: none;
+}
+li{
+	list-style: none;
+	text-align: center;
+	font-size: 14px;
+}
+.nav{
+	position: absolute;
+	left: 500px;
+	bottom: 20px;
+}
+.nav>li{
+	margin: 0 10px;
+	width: 20px;
+	height: 20px;
+	background: #ccc;
+	float: left;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.nav .act{
+	background: red;
+	color: white;
+}
+.scroll {
+	background: url(imgs/a15) no-repeat center;
+	background: rgb(200,200,200);
+	width: 100% auto;
+	height: 18px;
+	white-space: nowrap;
+/*	overflow: hidden;
+*/	margin-left: 0;
+	margin-bottom: 10px;
+/*	position: relative;*/
+}
+#lb{
+	float: left;
+	padding-left: 200px;
+}
+#sld{
+	width: 9800px;
+	height: 14px;
+	position: absolute;
+}
+#box1{
+	position: relative;
+	overflow: hidden;
+	padding-left: 0;
+	width: 100% auto;
+	height: 14px;
+	padding-top: 0;
+}
+#sld > span {
+/*	margin-left: 145px;
+*/	width: 100% auto;
+	height: 14px;
+	padding-top: 0;
+	font-size: 12px;
+	overflow: hidden;
+	margin-left: 1100px;
+	float: left;
+}
+.login{
+	display: none;
+	position: fixed;
+	top: 200px;
+	left: 600px;
+}
+.brand{
+	float: right;
+}

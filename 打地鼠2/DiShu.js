@@ -23,7 +23,7 @@ var tl,jg,sc,djs_span,df_div,ksBtn,ztBtn,tzBtn;
 var dz_div,ld_div;
 var imgs;
 var djs_id,jg_id,tl_id,play_id;
-var isStart;//判断是否开始，游戏开始为true，游戏暂停为false
+var isStart = false;//判断是否开始，游戏开始为true，游戏暂停为false
 var isZT = false;//是否为暂停
 var djs_data;//倒计时的时间
 var jxGame_sc;//继续游戏的总时长
@@ -46,7 +46,7 @@ zt_div = document.getElementById("zt_div");
 
 //游戏开始事件
 ksBtn.onclick = function(){
-	if(isOneStart == false){
+	if(isStart == false){
 		//计分板初始化
 		init();
 
@@ -74,7 +74,7 @@ ksBtn.onclick = function(){
 
 //游戏暂停事件
 ztBtn.onclick = function(){
-	if(isOneStart = true){
+	if(isStart = true){
 		if(isZT){
 	        //继续游戏
 	        // isOneStart = false;
@@ -139,7 +139,7 @@ function game_zt(){
     clearTimeout(djs_id);
     clearTimeout(jg_id);
     clearTimeout(tl_id);
-    if(!isOneStart){
+    if(!isStart){
         clearTimeout(jxDJS_id);
     }
     zt_div.style.display = "block";
@@ -178,7 +178,7 @@ function game_over(){
     clearTimeout(jg_id);
     clearTimeout(djs_id);
     clearTimeout(play_id);
-    if(!isOneStart){
+    if(!isStart){
         clearTimeout(jxDJS_id);
     }
     isStart = false;
@@ -189,6 +189,7 @@ function game_over(){
 
     //地鼠清场
     qingchang();
+    isOneStart = false;
 
 }
 
