@@ -6,18 +6,16 @@ var settingButton = document.getElementById('settingButton');
 
 
 
-
-
-settingButton.onclick = function() {
+function settingAppear(){
 	if(main_roll.style.top == "-765px"){
             animate(main_roll,{top: 0});
-            ksBtn.disabled = true;
     }else{
     	animate(main_roll,{top:-765});
-    	ksBtn.disabled = false;
     }
     
-};
+}
+
+settingButton.onclick = settingAppear;
 
 
 
@@ -25,7 +23,7 @@ var tl,jg,sc,djs_span,df_div,ksBtn,ztBtn,tzBtn;
 var dz_div,ld_div;
 var imgs;
 var djs_id,jg_id,tl_id,play_id;
-var isStart = false;//判断是否开始，游戏开始为true，游戏暂停为false
+var isStart;//判断是否开始，游戏开始为true，游戏暂停为false
 var isZT = false;//是否为暂停
 var djs_data;//倒计时的时间
 var jxGame_sc;//继续游戏的总时长
@@ -48,7 +46,7 @@ zt_div = document.getElementById("zt_div");
 
 //游戏开始事件
 ksBtn.onclick = function(){
-	if(isStart == false){
+	if(isOneStart == false){
 		//计分板初始化
 		init();
 
@@ -56,8 +54,8 @@ ksBtn.onclick = function(){
 	    jg_time = parseInt(jg.value);//间隔时间
 	    sc_time = parseInt(sc.value);//游戏时长
 
-	    // //设置游戏开始
-	    // isStart = true;
+	    //设置游戏开始
+	    isOneStart = true;
 
 	    //记录游戏开始时间
 	    start_Time = new Date();
@@ -67,7 +65,7 @@ ksBtn.onclick = function(){
 	    //执行地鼠出现的方法
 	    mouse_show();
 
-	    //禁止用户操作输入框和开始按钮
+	    //禁止用户操作输入框
 	    isStart = true;
 	    jinzhi();
 
@@ -76,7 +74,7 @@ ksBtn.onclick = function(){
 
 //游戏暂停事件
 ztBtn.onclick = function(){
-	if(isStart = true){
+	if(isOneStart = true){
 		if(isZT){
 	        //继续游戏
 	        // isOneStart = false;
@@ -141,7 +139,7 @@ function game_zt(){
     clearTimeout(djs_id);
     clearTimeout(jg_id);
     clearTimeout(tl_id);
-    if(!isStart){
+    if(!isOneStart){
         clearTimeout(jxDJS_id);
     }
     zt_div.style.display = "block";
@@ -180,7 +178,7 @@ function game_over(){
     clearTimeout(jg_id);
     clearTimeout(djs_id);
     clearTimeout(play_id);
-    if(!isStart){
+    if(!isOneStart){
         clearTimeout(jxDJS_id);
     }
     isStart = false;
@@ -191,13 +189,12 @@ function game_over(){
 
     //地鼠清场
     qingchang();
-    // isOneStart = false;
 
 }
 
 //地鼠清场
 function qingchang(){
-    for (var i=0;i<25;i++) {
+    for (var i=0;i<imgs.length-4;i++) {
         imgs[i].src = "img/00.jpg";
     }
 }
@@ -206,14 +203,14 @@ function qingchang(){
 function mouse_show(){
 
     //生成随机的数组下标
-    var i = parseInt(Math.floor(Math.random()*25));
+    var i = parseInt(Math.random()*(imgs.length-5));
     //随机改变图片
     imgs[i].src = "img/01.jpg";
 
     //地鼠出现间隔
-    jg_id = setTimeout("mouse_show()",(jg_time)*1000);
+    jg_id = setTimeout("mouse_show()",jg_time*1000);
     //地鼠停留时间
-    tl_id = setTimeout("mouse_hide("+i+")",(tl_time)*1000);
+    tl_id = setTimeout("mouse_hide("+i+")",tl_time*1000);
 
 }
 
